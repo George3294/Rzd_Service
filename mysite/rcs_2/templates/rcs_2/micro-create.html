@@ -1,0 +1,24 @@
+{% extends "rcs_2/base.html" %}
+
+{% block title %}
+    Create Microcomputer
+{% endblock  %}
+
+{% block body %}
+    <h1>Добавление данных с микрокомпьютера</h1>
+    <div>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" style="background-color:white; border-radius:5px">
+                Создание
+            </button>
+        </form>
+    </div>
+    <div>
+        <a href="{% url 'rcs_2:info-list' %}"><button style="background-color:white; border-radius:5px">Возвращение на страницу с перечнем станций и ардуино</button></a>
+    </div>
+    <div>
+        <a href="{% url 'rcs_2:info-index' %}"><button style="background-color:white; border-radius:5px">Возвращение на главную страницу</button></a>
+    </div>
+{% endblock  %}

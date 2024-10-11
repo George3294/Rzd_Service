@@ -1,0 +1,20 @@
+{% extends "arduinoapp/base.html" %}
+
+{% block title %}
+Структурныйе подразделения Дирекции связи
+{% endblock %}
+{% block body %}
+<h1>Структурные подразделения Дирекции связи</h1>
+<div>
+    Calendar: {{ calendar }}
+</div>
+<div>
+    <a href="{% url 'rcs_1:info-index' %}"><button style="background-color:white; border-radius:5px">РЦС-1</button></a>
+</div>
+<div>
+    <a href="{% url 'rcs_2:info-index' %}"><button style="background-color:white; border-radius:5px">РЦС-2</button></a>
+</div>
+<div>
+    <a href="{% url 'arduinoapp:info-index' %}"><button style="background-color:white; border-radius:5px">РЦС-4</button></a>
+</div>
+{%  endblock %}

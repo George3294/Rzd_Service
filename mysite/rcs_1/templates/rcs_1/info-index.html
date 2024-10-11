@@ -1,0 +1,44 @@
+{% extends "rcs_1/base.html" %}
+
+{% block title %}
+Главная страница РЦС-1
+{% endblock %}
+
+{% block body %}
+<h1>Главная страница РЦС-1</h1>
+
+<div>
+    <ul>
+        {% for name, temperature_info in stations %}
+        <li>{{name|linenumbers}} ({{name|length}}) {{temperature_info}}</li>
+    </ul>
+    {% endfor %}
+<div>
+    Time running: {{ time_running }}
+</div>
+
+<div>
+    <a href="{% url 'rcs_1:info-create' %}"><button style="background-color:white; border-radius:5px">Здесь ты можешь добавить станцию</button></a>
+</div>
+<div>
+    <a href="{% url 'rcs_1:info-list' %}"><button style="background-color:white; border-radius:5px" >Список станций</button></a>
+</div>
+<div>
+    <a href="{% url 'rcs_1:arduino-list' %}"><button style="background-color:white; border-radius:5px" >Список Arduino</button></a>
+</div>
+<div>
+    <a href="{% url 'rcs_1:info-arduino' %}"><button style="background-color:white; border-radius:5px" >Данные с Ардуино</button></a>
+</div>
+<div>
+    <a href="{% url 'rcs_1:arduino-create' %}"><button style="background-color:white; border-radius:5px" >Здесь ты можешь добавить Arduino</button></a>
+</div>
+<div>
+    <a href="{% url 'rcs_1:micro-create' %}"><button style="background-color:white; border-radius:5px" >Здесь ты можешь добавить Микрокомпьютер</button></a>
+</div>
+<div>
+    <a href="{% url 'rcs_1:micro-list' %}"><button style="background-color:white; border-radius:5px" >Список Микрокомпьютеров</button></a>
+</div>
+
+
+{% endblock %}
+

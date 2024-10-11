@@ -1,0 +1,22 @@
+{% extends "arduinoapp/base.html" %}
+
+{% block title %}
+    Info list
+{% endblock  %}
+
+{% block body %}
+<h1>Перечень станций и перечень Arduino на станции</h1>
+<div>
+    {% if stations.all %}
+    {% for station in stations.all %}
+        <p>Станция: {{station.name}}</p>
+        <p>Информация о станции: {{station.temperature_info}}</p>
+        {% endfor %}
+    </div>
+    {% else %}
+    <h3>Станции не загруженны</h3>
+    {% endif %}
+
+<a href="{% url 'arduinoapp:info-create' %}"><button style="background-color:white; border-radius:5px">Создание новой станции</button></a>
+<a href="{% url 'arduinoapp:arduino-create' %}"><button style="background-color:white; border-radius:5px">Создание нового ардуино</button></a>
+{% endblock  %}

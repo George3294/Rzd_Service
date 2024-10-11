@@ -1,0 +1,29 @@
+{% extends "rcs_2/base.html" %}
+
+{% block title %}
+    Info list
+{% endblock  %}
+
+{% block body %}
+<div>
+    {% if Microcomputers.all %}
+    {% for arduino in Microcomputers.all %}
+        <p> Имя микроконтроллера: {{Microcomputer.name}}</p>
+        <p> Информация с датчика температуры: {{Microcomputer.temperature_info}}</p>
+        <p> На какой станции он находится микроконтроллер: {{Microcomputer.station}}
+        <p> Информация когда была загружена: {{Microcomputer.update_data}}</p>
+        {% endfor %}
+    </div>
+    {% else %}
+    <h3>Станции не загруженны</h3>
+    {% endif %}
+    <div>
+        <a href="{% url 'rcs_2:info-create' %}"><button style="background-color:white; border-radius:5px">Создать новую станцию</button></a>
+    </div>
+    <div>
+        <a href="{% url 'rcs_2:micro-create' %}"><button style="background-color:white; border-radius:5px">Создать новый микрокомпьютер</button></a>
+    </div>
+    <div>
+        <a href="{% url 'rcs_2:info-index' %}"><button style="background-color:white; border-radius:5px">Возвращение на главную страницу</button></a>
+    </div>
+{% endblock  %}

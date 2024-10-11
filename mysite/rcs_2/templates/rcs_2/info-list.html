@@ -1,0 +1,22 @@
+{% extends "rcs_2/base.html" %}
+
+{% block title %}
+Информация об РЦС-2
+{% endblock  %}
+
+{% block body %}
+<h1>Информация об РЦС-2</h1>
+<div>
+    {% if stations.all %}
+    {% for station in stations.all %}
+        <p>Станция: {{station.name}}</p>
+        <p>Информация о станции: {{station.temperature_info}}</p>
+        {% endfor %}
+    </div>
+    {% else %}
+    <h3>Станции не загруженны</h3>
+    {% endif %}
+
+<a href="{% url 'rcs_2:info-create' %}"><button style="background-color:white; border-radius:5px">Создание новой станции</button></a>
+<a href="{% url 'rcs_2:arduino-create' %}"><button style="background-color:white; border-radius:5px">Создание нового ардуино</button></a>
+{% endblock  %}

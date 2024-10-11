@@ -1,0 +1,41 @@
+{% extends "myauth/base.html" %}
+{% block body %}
+<h1>Информация о пользователе</h1>
+
+<div>
+{% if user.is_authenticated%}
+    <h2>Детали</h2>
+    <p>Имя короткое:{{ user.username }}</p>
+    <p>Имя:{{user.first_name}}</p>
+    <p>Отчество:{{ user.last_name }}</p>
+</div>
+
+    {% else %}
+    <h2>User is anonymous</h2>
+{% endif %}
+{% if user.is_staff %}
+    <p>Staff-user:{{ user.username }}</p>
+    {% else %}
+        <h2>User is not staff</h2>
+{% endif %}
+
+    <div>
+    {% if profiles %}
+    {% for profile in profiles %}
+        <p> Должность:{{ profile.position }}</p>
+        {% endfor %}
+    </div>
+        {% else %}
+            <h3>Нет информации о должности</h3>
+        {% endif %}
+    <div>
+        <a href="{% url 'arduinoapp:info-index' %}">Возвращение на главную страницу</a>
+    </div>
+    <div>
+        <a href="{% url 'myauth:logout' %}">Выйти</a>
+    </div>
+
+    <div>
+        <a href="{% url 'myauth:user-profile-update' user.pk %}"> Обновить профиль</a>
+    </div>
+{% endblock  %}

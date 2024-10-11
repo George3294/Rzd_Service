@@ -1,0 +1,30 @@
+{% extends "arduinoapp/base.html" %}
+
+{% block title %}
+    Arduino Info
+{% endblock  %}
+
+{% block body %}
+<meta charset="UTF-8">
+<!--<meta http-equiv="Refresh" content="15" />-->
+<div>
+    <h1>Данные с Ардуино</h1>
+</div>
+<div class="estimated-price">
+    <label>Данные с Ардуино:</label>
+</div>
+<div>
+    <ul>
+        {% for name, temperature_info in data_sensor %}
+        <li> {{name|linenumbers}} {{temperature_info}} </li>
+    </ul>
+    {% endfor %}
+</div>
+<div>
+    IP адрес Ардуино на станции Новая НС:
+    <a href="http://192.168.0.102">192.168.0.102</a>
+</div>
+<div>
+    <a href="{% url 'arduinoapp:info-index' %}"><button style="background-color:white; border-radius:5px">Возвращение на главную страницу</button></a>
+</div>
+{% endblock  %}
