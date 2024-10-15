@@ -1,0 +1,12 @@
+{% extends "arduinoapp/base.html" %}
+
+{% block title %}
+Управление оборудованием
+{% endblock %}
+
+{% block body %}
+<h1>Управление оборудованием</h1>
+<div>
+    <a href="{% url 'arduinoapp:info-arduino' %}"><button style="background-color:white; border-radius:5px" >Управление Ардуино</button></a>
+</div>
+{% endblock%}

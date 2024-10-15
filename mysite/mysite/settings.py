@@ -40,24 +40,12 @@ sentry_sdk.init(
     # We recommend adjusting this value in production.
     profiles_sample_rate=1.0,
 )
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '188.225.56.160']
+ALLOWED_HOSTS = ['*']
 
-INTERNAL_IPS = [
-    '127.0.0.1',
-    '188.225.56.160',
-]
 
-if DEBUG:
-    import socket
-    hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
-    INTERNAL_IPS.append("10.0.2.2")
-    INTERNAL_IPS.extend(
-        [ip[: ip.rfind(".")] + "1" for ip in ips]
-    )
 
 # Application definition
 

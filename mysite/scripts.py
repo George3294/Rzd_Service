@@ -1,7 +1,7 @@
 import serial
 import pigpio
 
-serial_port = "COM4"
+serial_port = "COM5"
 serial_baud = 9600
 files = "arduino.csv"
 ser = serial.Serial(serial_port, serial_baud)

@@ -1,0 +1,27 @@
+{% extends "arduinoapp/base.html" %}
+
+
+{% block title %}
+Добавление информации о РЦС-4
+{% endblock %}
+
+
+{% block body %}
+<h1>Настройки РЦС-4</h1>
+
+<div>
+    <a href="{% url 'arduinoapp:info-create' %}"><button style="background-color:white; border-radius:5px">Добавить станцию</button></a>
+</div>
+<div>
+    <a href="{% url 'arduinoapp:info-list' %}"><button style="background-color:white; border-radius:5px" >Список станций</button></a>
+</div>
+<div>
+    <a href="{% url 'arduinoapp:arduino-list' %}"><button style="background-color:white; border-radius:5px" >Список Arduino</button></a>
+</div>
+<div>
+    <a href="{% url 'arduinoapp:info-arduino' %}"><button style="background-color:white; border-radius:5px" >Данные с Ардуино</button></a>
+</div>
+<div>
+    <a href="{% url 'arduinoapp:arduino-create' %}"><button style="background-color:white; border-radius:5px" >Добавить Arduino</button></a>
+</div>
+{% endblock %}

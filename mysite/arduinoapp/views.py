@@ -111,6 +111,15 @@ class InfoIndexRCS(View):
         }
         return render(request, "arduinoapp/rcs-index.html", context=context)
 
+
+class InfoSettingsView(View):
+    def get(self, request: HttpRequest) -> HttpResponse:
+        return render(request, "arduinoapp/info-settings.html")
+
+class InfoAboutRCS4(View):
+    def get(self, request: HttpRequest) -> HttpResponse:
+        return render(request, "arduinoapp/info-aboutRCS4.html")
+
 class InfoIndexView(View):
     """
     Главная страница сайта

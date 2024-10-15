@@ -2,12 +2,18 @@ from django.db import models
 from django.utils import timezone
 # Create your models here.
 
+def product_document_directory_path(instance: "Station", filename: str) -> str:
+    return "station/station_{pk}/documents/{filename}".format(
+        pk=instance,
+        filename=filename,
+    )
 
 class Station(models.Model):
     id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=100) # Station name
     temperature_info = models.CharField(max_length=100) # Station temperature info
     data_created = models.DateTimeField(default=timezone.now)
+    documents = models.FileField(null=True, blank=True, upload_to=product_document_directory_path)
 
     def __str__(self):
         return self.name # Station name

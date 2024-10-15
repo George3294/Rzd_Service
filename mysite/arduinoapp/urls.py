@@ -7,7 +7,9 @@ from .views import (InfoIndexView,
                     ArduinoCreateView,
                     ArduinoListView,
                     StationViewSet,
-                    usb_web)
+                    usb_web,
+                    InfoSettingsView,
+                    InfoAboutRCS4)
 from rest_framework.routers import DefaultRouter
 app_name = 'arduinoapp'
 
@@ -16,6 +18,8 @@ routers.register("station", StationViewSet)
 urlpatterns = [
     path('', InfoIndexView.as_view(), name='info-index'),
     path("rcs/", InfoIndexRCS.as_view(), name = "rcs-index"),
+    path("settings/", InfoSettingsView.as_view(), name="info-settings"),
+    path("about/", InfoAboutRCS4.as_view(), name="info-aboutRCS4"),
     path("api/", include(routers.urls)),
     path("station/", StationListView.as_view(), name="info-list"),
     path("station/create", StationCreateView.as_view(), name="info-create"),

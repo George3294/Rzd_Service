@@ -15,40 +15,12 @@
         <li>{{name|linenumbers}} ({{name|length}}) {{temperature_info}}</li>
     </ul>
     {% endfor %}
-<div>
-    Time running: {{ time_running }}
-</div
-
-<div>
-    <a href="{% url 'arduinoapp:info-create' %}"><button style="background-color:white; border-radius:5px">Здесь ты можешь добавить станцию</button></a>
-</div>
-<div>
-    <a href="{% url 'arduinoapp:info-list' %}"><button style="background-color:white; border-radius:5px" >Список станций</button></a>
-</div>
-<div>
-    <a href="{% url 'arduinoapp:arduino-list' %}"><button style="background-color:white; border-radius:5px" >Список Arduino</button></a>
-</div>
-<div>
-    <a href="{% url 'arduinoapp:info-arduino' %}"><button style="background-color:white; border-radius:5px" >Данные с Ардуино</button></a>
-</div>
-<div>
-    <a href="{% url 'arduinoapp:arduino-create' %}"><button style="background-color:white; border-radius:5px" >Здесь ты можешь добавить Arduino</button></a>
-</div>
-    <div>
-        <a href="{% url 'myauth:register' %}"><button style="background-color:white; border-radius:5px" >Здесь ты можешь зарегистрироваться</button></a>
-    </div>
-    <div>
-        <a href="{% url 'myauth:login' %}"><button style="background-color:white; border-radius:5px" >Здесь ты можешь войти</button></a>
-    </div>
-    <div>
-        <a href="{% url 'myauth:logout' %}"><button style="background-color:white; border-radius:5px" >Выйти</button></a>
-    </div>
-    <div>
-        <a href = "{% url 'myauth:additional_information'%}"><button style="background-color:white; border-radius:5px" >Дополнительная информация</button></a>
-    </div>
-    <div>
-        <a href = "{% url 'requestdataapp:file-upload'%}"><button style="background-color:white; border-radius:5px" >Просмотр файла</button>
-    </div>
 
 
+<div>
+    <a href="{% url 'arduinoapp:info-settings' %}"><button style="background-color:white; border-radius:5px">Настройки станциями в РЦС-4</button></a>
+</div>
+<div>
+    <a href="{% url 'arduinoapp:info-aboutRCS4' %}"><button style="background-color:white; border-radius:5px">Добавление информации для РЦС-4</button></a>
+</div>
 {% endblock %}

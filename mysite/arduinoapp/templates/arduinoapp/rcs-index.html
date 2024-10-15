@@ -6,9 +6,6 @@
 {% block body %}
 <h1>Структурные подразделения Дирекции связи</h1>
 <div>
-    Calendar: {{ calendar }}
-</div>
-<div>
     <a href="{% url 'rcs_1:info-index' %}"><button style="background-color:white; border-radius:5px">РЦС-1</button></a>
 </div>
 <div>
@@ -16,5 +13,14 @@
 </div>
 <div>
     <a href="{% url 'arduinoapp:info-index' %}"><button style="background-color:white; border-radius:5px">РЦС-4</button></a>
+</div>
+<div>
+      <a href="{% url 'myauth:register' %}"><button style="background-color:white; border-radius:5px" >Регистрация</button></a>
+</div>
+<div>
+      <a href="{% url 'myauth:login' %}"><button style="background-color:white; border-radius:5px" >Войти</button></a>
+</div>
+<div>
+      <a href="{% url 'myauth:logout' %}"><button style="background-color:white; border-radius:5px" >Выйти</button></a>
 </div>
 {%  endblock %}
