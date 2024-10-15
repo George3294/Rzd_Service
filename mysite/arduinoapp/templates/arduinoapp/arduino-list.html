@@ -5,6 +5,7 @@
 {% endblock  %}
 
 {% block body %}
+<h1>Информация о станции Саратов-1</h1>
 <div>
     {% if arduinos.all %}
     {% for arduino in arduinos.all %}
@@ -17,13 +18,5 @@
     {% else %}
     <h3>Станции не загруженны</h3>
     {% endif %}
-    <div>
-        <a href="{% url 'arduinoapp:info-create' %}"><button style="background-color:white; border-radius:5px">Создать новую станцию</button></a>
-    </div>
-    <div>
-        <a href="{% url 'arduinoapp:arduino-create' %}"><button style="background-color:white; border-radius:5px">Создать новый ардуино</button></a>
-    </div>
-    <div>
-        <a href="{% url 'arduinoapp:info-index' %}"><button style="background-color:white; border-radius:5px">Возвращение на главную страницу</button></a>
-    </div>
+
 {% endblock  %}

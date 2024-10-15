@@ -120,6 +120,10 @@ class InfoAboutRCS4(View):
     def get(self, request: HttpRequest) -> HttpResponse:
         return render(request, "arduinoapp/info-aboutRCS4.html")
 
+class Saratov_1RCS4(View):
+    def get(self, request: HttpRequest) -> HttpResponse:
+        return render(request, "arduinoapp/info-Saratov_1RCS4.html")
+
 class InfoIndexView(View):
     """
     Главная страница сайта
