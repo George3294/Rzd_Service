@@ -10,8 +10,11 @@ from .views import (InfoIndexView,
                     usb_web,
                     InfoSettingsView,
                     InfoAboutRCS4,
-                    Saratov_1RCS4)
+                    Saratov_1RCS4,
+                    )
 from rest_framework.routers import DefaultRouter
+from django.conf.urls.static import static
+from django.conf import settings
 app_name = 'arduinoapp'
 
 routers = DefaultRouter()
@@ -29,3 +32,6 @@ urlpatterns = [
     path("arduino/list", ArduinoListView.as_view(), name="arduino-list"),
     path("arduino/info",usb_web, name="info-arduino"),
 ]
+if settings.DEBUG: # new
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

@@ -5,12 +5,12 @@
 {% endblock %}
 
 {% block body %}
-<h1>Сатанция Саратов-1</h1>
+<h1>Станция Саратов-1</h1>
 
 <div>
-    <a href="{% url 'arduinoapp:info-settings' %}"><button style="background-color:white; border-radius:5px">Управление</button></a>
+    <a href="{% url 'arduinoapp:info-arduino' %}"><button style="background-color:white; border-radius:5px">Управление</button></a>
 </div>
 <div>
-    <a href="{% url 'arduinoapp:info-aboutRCS4' %}"><button style="background-color:white; border-radius:5px">Информация</button></a>
+    <a href="{% url 'arduinoapp:arduino-list' %}"><button style="background-color:white; border-radius:5px">Информация</button></a>
 </div>
 {% endblock%}

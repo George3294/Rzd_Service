@@ -10,7 +10,6 @@
     {% if arduinos.all %}
     {% for arduino in arduinos.all %}
         <p> Имя микроконтроллера: {{arduino.name}}</p>
-        <p> Информация с датчика температуры: {{arduino.temperature_info}}</p>
         <p> На какой станции он находится микроконтроллер: {{arduino.station}}
         <p> Информация когда была загружена: {{arduino.update_data}}</p>
         {% endfor %}

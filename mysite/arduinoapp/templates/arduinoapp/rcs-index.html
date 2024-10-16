@@ -23,4 +23,7 @@
 <div>
       <a href="{% url 'myauth:logout' %}"><button style="background-color:white; border-radius:5px" >Выйти</button></a>
 </div>
+
+{% load static %}
+<img style="width: 245px; height: 247px;" alt="Описание изображения" src="{% static 'img/Безымянный.png' %}"/>
 {%  endblock %}

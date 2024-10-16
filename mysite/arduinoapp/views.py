@@ -23,7 +23,7 @@ from rest_framework.viewsets import ModelViewSet
 from twisted.protocols.sip import Response
 from .common import save_csv_stations
 from .forms import StationForm
-from .models import Station, Arduino, Sensor_Data
+from .models import Station, Arduino, Sensor_Data, Image
 import serial
 from .serializer import StationSerializer
 import requests
@@ -123,6 +123,12 @@ class InfoAboutRCS4(View):
 class Saratov_1RCS4(View):
     def get(self, request: HttpRequest) -> HttpResponse:
         return render(request, "arduinoapp/info-Saratov_1RCS4.html")
+
+from .forms import ImageForm
+
+class HomePageView(ListView):
+    model = Image
+    template_name = 'rcs-index.html'
 
 class InfoIndexView(View):
     """
