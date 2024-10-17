@@ -45,7 +45,7 @@ class RegisterView(CreateView):
         username = form.cleaned_data.get("username")
         password = form.cleaned_data.get("password1")
         user = authenticate(
-            self.request, 
+            self.request,
             username=username,
             password=password,
         )
@@ -60,7 +60,7 @@ class UpdateUserProfile(UpdateView):
     model = Profile
     fields = "user","name","position", "document"
     template_name = "myauth/user-profile-update.html"
-    success_url = reverse_lazy('myauth:about-me')
+    #success_url = reverse_lazy('myauth:about-me')
 
 
 

@@ -60,6 +60,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'drf_spectacular',
+    'crispy_forms',
+    'crispy_tailwind',
     'arduinoapp.apps.ArduinoappConfig',
     'myauth.apps.MyauthConfig',
     'requestdataapp.apps.RequestdataappConfig',
