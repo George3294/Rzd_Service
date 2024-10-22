@@ -11,6 +11,7 @@ def info_arduino_directory_path(instance: "Profile", filename: str) -> str:
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
+    surname = models.CharField(max_length=100, null=True)
     position = models.CharField(max_length=100)
     document = models.FileField(null=True, blank=True, upload_to=info_arduino_directory_path)
 class Email(models.Model):

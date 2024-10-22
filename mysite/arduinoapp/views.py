@@ -6,6 +6,7 @@ import logging
 from csv import DictWriter
 from io import TextIOWrapper
 from re import split
+from time import timezone
 from timeit import default_timer
 from urllib.request import Request
 from requests import Response
@@ -228,10 +229,10 @@ def usb_web(request: HttpRequest) -> HttpResponse:
 
 class DataSensorListView(ListView):
     """
-    Информаця с Arduino для анализа
+    Информация с Arduino для анализа
     и работы с этими данными
     """
-    template_name = "arduinoapp/info-arduino.html"
+    template_name = "arduinoapp/arduino-list.html"
     context_object_name = "Sensor_datas"
     queryset = Sensor_Data.objects.all()
 

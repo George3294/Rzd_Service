@@ -54,3 +54,13 @@ class Image(models.Model):
 
     def __str__(self):
         return self.title
+
+class Microcomputer(models.Model):
+    id = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=200)
+    station = models.ForeignKey(Station, on_delete=models.CASCADE)
+    temperature_info = models.IntegerField(default=0)
+    update_data = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        verbose_name = 'Microcomputer'

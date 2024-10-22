@@ -7,15 +7,11 @@
 {% block body %}
 <h1>Информация о станции Саратов-1</h1>
 <div>
-    {% if arduinos.all %}
-    {% for arduino in arduinos.all %}
-        <p> Имя микроконтроллера: {{arduino.name}}</p>
-        <p> На какой станции он находится микроконтроллер: {{arduino.station}}
-        <p> Информация когда была загружена: {{arduino.update_data}}</p>
-        {% endfor %}
-    </div>
-    {% else %}
-    <h3>Станции не загруженны</h3>
-    {% endif %}
+    <ul>
+        {% for name, temperature_info in data_sensor %}
+        <li> {{name|linenumbers}} {{temperature_info}} </li>
+    </ul>
+    {% endfor %}
+</div>
 
 {% endblock  %}

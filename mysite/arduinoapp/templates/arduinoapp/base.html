@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 {% load i18n %}
 <head>
     <meta charset="UTF-8">
@@ -25,5 +25,7 @@ Base Body
     {% now 'l' as current_weekday%}
     Сегодня: {{current_weekday}}
 </div>
+{% block content %}
+{% endblock %}
 </body>
 </html>

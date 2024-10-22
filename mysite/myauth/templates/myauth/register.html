@@ -1,19 +1,20 @@
 {% extends "myauth/base.html" %}
-
+{% load crispy_forms_tags %}
 {% block title %}
-    Register
+    Регистрация
 {% endblock  %}
 
 
 {% block body %}
     <h1>Регистрация</h1>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form.as_p}}
         <input type="submit" value="Регистрация" style="background-color:white; border-radius:5px">
     </form>
     <div>
         <a href="{% url 'arduinoapp:rcs-index' %}"><button style="background-color:white; border-radius:5px">Назад</button></a>
+        <a href="{% url 'myauth:login' %}"><button style="background-color:white; border-radius:5px">У меня уже есть аккаунт</button></a>
     </div>
 
 {% endblock  %}

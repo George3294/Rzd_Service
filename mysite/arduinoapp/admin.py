@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.db.models import QuerySet
 from django.http import HttpRequest
 from .admin_mixins import ExportAsCSVMixin
-from .models import Station, Arduino, Sensor_Data, Image
+from .models import Station, Arduino, Sensor_Data, Image, Microcomputer
 
 
 #admin.site.register(Station)
@@ -58,4 +58,13 @@ class Sensor_DataAdmin(admin.ModelAdmin, ExportAsCSVMixin):
         mark_unarchived,
         "export_csv",
         "export_txt"
+    ]
+
+@admin.register(Microcomputer)
+class MicrocomputerAdmin(admin.ModelAdmin, ExportAsCSVMixin):
+    actions = [
+        mark_archived,
+        mark_unarchived,
+        "export_csv",
+        "export_txt",
     ]
