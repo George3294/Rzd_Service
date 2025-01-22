@@ -3,7 +3,7 @@ from django.urls import reverse
 from shopapp.utils import add_two_numbers
 from string import ascii_letters
 from random import choices
-from shopapp.models import Product
+from shopapp.models import Station
 from django.contrib.auth.models import User, Permission
 from django.conf import settings
 from .models import Order
@@ -37,7 +37,7 @@ class ProductCreateViewTestCase(TestCase):
 class ProductDetailsViewTestCase(TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.product = Product.objects.create(name="Best Product")
+        cls.product = Station.objects.create(name="Best Station")
         
     @classmethod
     def tearDownClass(cls):
